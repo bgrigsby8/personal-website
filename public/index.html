@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Interactive Animation</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <img id="firstFrame" src="first_frame.png" usemap="#BlueprintMap" alt="Interactive Blueprint">
+        <img id="lastFrameAboutMe" src="about_me_image.png" style="display: none;" alt="Last Frame About Me">
+        <img id="lastFrameResume" src="resume_image.png" style="display: none;" alt="Last Frame Resume">
+        <img id="lastFrameProjects" src="about_me_image.png" style="display: none;" alt="Last Frame Projects">
+        <map name="BlueprintMap">
+            <area shape="rect" coords="742,873,352,185" alt="About Me" href="javascript:playAnimation('about_me_anim.mp4', 'lastFrameAboutMe');">
+            <area shape="rect" coords="767,186,1158,873" alt="Resume" href="javascript:playAnimation('resume_anim.mp4', 'lastFrameResume');">
+            <area shape="rect" coords="1185,188,1573,870" alt="Projects" href="javascript:playAnimation('projects_anim.mp4', 'lastFrameProjects');">
+        </map>
+        <video id="animationVideo" width="100%" style="display: none;">
+            <source type="video/mp4">
+        </video>
+        <button onclick="reverseAnimation()" style="display: none;">Back</button>
+    </div>
+    <script type="text/javascript" src="script.js"></script>
+</body>
+</html>
