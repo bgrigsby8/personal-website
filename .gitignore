@@ -65,3 +65,9 @@ tmp
 .Trashes
 ehthumbs.db
 Thumbs.db
+
+# Cache
+.cache
+
+# Large blender files
+*.blend
