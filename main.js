@@ -131,9 +131,16 @@ controls.maxPolarAngle = Math.PI / 2;
 controls.update();
 
 // LOAD MODEL & ASSET
-// -------------------- OLD STLYE. USE DRACO IF PERFORMANCE IS BAD -------------------------------------
+const loadingScreen = document.getElementById('loading-screen');
+loadingScreen.style.display = 'grid';
+
+const dracoLoader = new DRACOLoader();
+dracoLoader.setDecoderPath('draco/');
+dracoLoader.preload();
+
 const gltfLoader = new GLTFLoader();
-gltfLoader.load('models/workbench.gltf', function (workbench) {
+gltfLoader.setDRACOLoader(dracoLoader);
+gltfLoader.load('models/workbench_draco.glb', function (workbench) {
 	workbench.scene.scale.set(0.01, 0.01, 0.01);
 	workbench.scene.traverse(function (child) {
 		if (child.isMesh) {
@@ -147,6 +154,8 @@ gltfLoader.load('models/workbench.gltf', function (workbench) {
 	});
 	scene.add(workbench.scene);
 	animate();
+
+	loadingScreen.style.display = 'none';
 
 	// Load text & elements
 	loadTitleText();

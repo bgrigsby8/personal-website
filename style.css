@@ -4,10 +4,44 @@
   font-weight: 500;
   --color-text: #fdfbf8;
   --font-family: 'Inconsolata', monospace;
+  --dark-grey: #2a2a2a;
 }
 
 body {
   font-family: var(--font-family);
+}
+
+#loading-screen {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background: rgba(0, 0, 0, 0.8);
+    color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 101; /* Ensure it's on top */
+}
+
+#loading-screen p {
+  top: 50vh;
+}
+
+.spinner {
+    border: 16px solid #f3f3f3; /* Light grey */
+    border-top: 16px solid #3498db; /* Blue */
+    border-radius: 50%;
+    width: 120px;
+    height: 120px;
+    margin-top: 20px; /* Space between text and spinner */
+    animation: spin 2s linear infinite;
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
 }
 
 .experience {
@@ -151,6 +185,7 @@ header {
 }
 
 .contact-form input, .contact-form textarea {
+  font-family: var(--font-family);
   width: 100%;
   padding: 10px;
   margin-bottom: 10px;
