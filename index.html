@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<meta name="description" content="Hi, my name is Brad Grigsby"/>
+		<link rel="preconnect" href="https://fonts.googleapis.com">
+		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+		<link href="https://fonts.googleapis.com/css2?family=Inconsolata:wght@200..900&display=swap" rel="stylesheet">
+		<link rel="stylesheet" href="./style.css" />
+		<script type="text/javascript"
+		        src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js">
+		</script>
+		<script type="text/javascript">
+		   (function(){
+		      emailjs.init({
+		        publicKey: "2rqofE3ZaKwtOIHOS",
+		      });
+		   })();
+		</script>
+		<title>Brad Grigsby Portfolio</title>
+	</head>
+	<body>
+		<div class="experience">
+			<canvas class="experience-canvas"></canvas>
+		</div>
+		<div id="warning-screen" class="warning-screen">
+			<button type="button" id="warning-exit" class="warning-exit-btn">X</button>
+			<h2 style="text-align: center;">**Warning**</h2>
+			<p>This is best viewed from a desktop experience.</p>
+		</div>
+		<header>
+			<nav class="side-nav">
+				<ul>
+					<li>
+						<a href="#" id="home-menu">
+							<span>Home</span>
+						</a>
+					</li>
+					<li>
+						<a href="#" id="resume-menu">
+							<span>Resume</span>
+						</a>
+					</li>
+					<li>
+						<a href="#" id="about-menu">
+							<span>About Me</span>
+						</a>
+					</li>
+					<li>
+						<a href="#" id="projects-menu">
+							<span>Projects</span>
+						</a>
+						<div class="projects-dropdown">
+							<a href="#" data-project="videoEditor">Video Editor</a>
+							<a href="#" data-project="underbelly">Underbelly</a>
+							<a href="#" data-project="landmarked">LandMarked</a>
+						</div>
+					</li>
+					<li>
+						<a href="#" id="contact-menu">
+							<span>Contact Me</span>
+						</a>
+					</li>
+				</ul>
+			</nav>
+		</header>
+		<div id="contact-form" class="contact-form" style="display: none;">
+			<button type="button" id="contact-exit" class="contact-exit-btn">X</button>
+			<h2 style="text-align: center;">Send an email to me!</h2>
+			<form>
+				<input type="text" id="name" name="name" placeholder="Your Name" required>
+				<input type="text" id="subject" name="subject" placeholder="Subject" required>
+				<textarea id="message" name="message" placeholder="Your Message" required></textarea>
+				<button type="button" id="send-email" class="contact-send-btn">Send</button>
+			</form>
+		</div>
+		<footer>2024 portfolio - designed & developed by Brad Grigsby | Email: bgrigsby8@gmail.com  LinkedIn: linkedin.com/in/james-grigsby8/</footer>
+		<script type="module" src="main.js"></script>
+	</body>
+</html>

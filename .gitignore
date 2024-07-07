@@ -71,3 +71,6 @@ Thumbs.db
 
 # Large blender files
 *.blend
+
+# Old files
+old_method/
